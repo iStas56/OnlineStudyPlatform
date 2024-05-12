@@ -10,7 +10,7 @@ DOCKER_COMPOSE_FILE = docker-compose.yml
 DOCKER = docker
 PYTHON = python
 ALEMBIC = alembic
-TEST_DIR = tests
+TEST_DIR = test/
 HOST_PORT = 8000
 CONTAINER_PORT = 8000
 SERVICE = onlinecoursesplatform-web-1
@@ -38,6 +38,9 @@ test:
 
 shell:
 	$(DOCKER) exec -it $(SERVICE) /bin/bash
+
+dbshell:
+	$(DOCKER) exec -it $(DB_SERVICE) /bin/bash
 
 
 # Default target
